@@ -1,0 +1,147 @@
+{
+  "botResponse":  {
+    "id": "chatcmpl-9LDLNgeTO1k77UeGcrrRlFMIcSA2W",
+    "object": "chat.completion",
+    "created": 1714843209,
+    "model": "gpt-3.5-turbo-0125",
+    "choices": [
+      {
+        "index": 0,
+        "message": {
+          "role": "assistant",
+          "content": "Hello! How can I assist you today?"
+        },
+        "logprobs": null,
+        "finish_reason": "stop"
+      }
+    ],
+    "usage": {
+      "prompt_tokens": 8,
+      "completion_tokens": 9,
+      "total_tokens": 17
+    },
+    "system_fingerprint": "fp_3b956da36b"
+  },
+  "databaseChat": {
+    "messages": [
+      {
+        "content": "hello",
+        "role": "user"
+      },
+      {
+        "content": "Hello! How can I assist you today?",
+        "role": "assistant"
+      },
+      {
+        "content": "what can you do?",
+        "role": "user"
+      },
+      {
+        "content": "I am a text-based AI assistant created to help answer questions, provide information, and engage in conversation on a variety of topics. I can assist with tasks such as finding information, giving recommendations, providing explanations, and more. Feel free to ask me anything you'd like!",
+        "role": "assistant"
+      }
+    ],
+    "lastActive": 1714851058617,
+    "chatName": "Let's discuss the impact of artificial intelligenc"
+  },
+  "userData" :  {
+     "userId": "NvrRggnfmsWXUlusjiuzzDcnwX22",
+     "isEmailVerified": false,
+     "email": "yashawasthi02@gmail.com",
+     "displayName": "commerce zone"
+  },
+  "chats": [{
+     "messages": [
+         {
+             "content": "Explain bitcoin",
+             "role": "user"
+           },
+         {
+             "content": "Bitcoin is a decentralized digital currency that was created in 2009 by an unknown person using the pseudonym Satoshi Nakamoto. It operates on a peer-to-peer network, meaning that transactions are made directly between users without the need for a central authority, such as a bank or government.\n\nBitcoin uses blockchain technology to record all transactions made with the currency. The blockchain is a public ledger that is maintained by a network of computers, known as nodes. When a transaction is made, it is verified by these nodes and added to the blockchain, ensuring that all transactions are secure and transparent.\n\nOne of the key features of Bitcoin is its limited supply. There will only ever be 21 million bitcoins in existence, which helps to prevent inflation and maintain the value of the currency. Bitcoins can be bought, sold, and traded on various online exchanges, and they can also be used to purchase goods and services from merchants that accept",
+             "role": "assistant"
+           },
+         {
+             "content": "What is ethereum",
+             "role": "user"
+           },
+         {
+             "content": "Ethereum is a decentralized platform that enables developers to build and deploy smart contracts and decentralized applications (DApps). It was proposed by Vitalik Buterin in late 2013 and development began in early 2014, with the network going live on July 30, 2015.\n\nSimilar to Bitcoin, Ethereum operates on a blockchain that records all transactions and smart contract executions. However, Ethereum's blockchain is more advanced in that it can execute complex scripts known as smart contracts, which are self-executing contracts with the terms of the agreement directly written into code. These smart contracts can automate various processes, such as payments, asset exchanges, and identity verification, without the need for intermediaries.\n\nEther (ETH) is the native cryptocurrency of the Ethereum network, used to pay for transactions and computational services. It also serves as a store of value and can be traded on various exchanges like other cryptocurrencie",
+             "role": "assistant"
+           }
+       ],
+     "lastActive": 1714858892901,
+     "chatName": "Explaining bitcoin"
+   },  {
+    "messages": [
+      {
+        "content": "hello",
+        "role": "user"
+      },
+      {
+        "content": "Hello! How can I assist you today?",
+        "role": "assistant"
+      },
+      {
+        "content": "what can you do?",
+        "role": "user"
+      },
+      {
+        "content": "I am a text-based AI assistant created to help answer questions, provide information, and engage in conversation on a variety of topics. I can assist with tasks such as finding information, giving recommendations, providing explanations, and more. Feel free to ask me anything you'd like!",
+        "role": "assistant"
+      }
+    ],
+    "lastActive": 1714851058617,
+    "chatName": "Let's discuss the impact of artificial intelligenc"
+  },  {
+       "messages": [
+           {
+               "content": "hello",
+               "role": "user"
+             },
+           {
+               "content": "Hello! How can I assist you today?",
+               "role": "assistant"
+             },
+           {
+               "content": "what can you do?",
+               "role": "user"
+             },
+           {
+               "content": "I am a text-based AI assistant created to help answer questions, provide information, and engage in conversation on a variety of topics. I can assist with tasks such as finding information, giving recommendations, providing explanations, and more. Feel free to ask me anything you'd like!",
+               "role": "assistant"
+             },
+           {
+               "content": "who made you",
+               "role": "user"
+             },
+           {
+               "content": "I was created by a team of developers at OpenAI, a research organization focused on artificial intelligence. My responses are generated based on a large dataset of text from the internet, which allows me to provide helpful and informative responses to a wide range of questions.",
+               "role": "assistant"
+             },
+           {
+               "content": "what is OpenAI",
+               "role": "user"
+             },
+           {
+               "content": "OpenAI is an artificial intelligence research organization that focuses on developing and promoting friendly AI for the benefit of all humanity. It was founded in December 2015 by Elon Musk, Sam Altman, Greg Brockman, Ilya Sutskever, John Schulman, and Wojciech Zaremba. OpenAI conducts research in various AI-related fields, publishes its findings, and develops AI technology to advance the field in a safe and beneficial manner.",
+               "role": "assistant"
+             }
+         ],
+       "lastActive": 1714859176473,
+       "chatName": "Let's discuss the impact of artificial intelligenc"
+     }, {
+       "messages": [
+           {
+               "content": "tell me a joke ",
+               "role": "user"
+             },
+           {
+               "content": "Why did the scarecrow win an award? Because he was outstanding in his field!",
+               "role": "assistant"
+             }
+         ],
+       "lastActive": 1714861812602,
+       "chatName": "Funny jokes to lighten the mood."
+     }
+  ]
+}
