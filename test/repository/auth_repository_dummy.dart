@@ -31,4 +31,9 @@ class AuthRepositoryDummy implements IAuthRepository {
   }) async {
     json['isEmailVerified'] = isVerified;
   }
+
+  @override
+  Future<bool> logout() async {
+    return true;
+  }
 }

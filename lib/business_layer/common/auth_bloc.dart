@@ -15,6 +15,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
   ///as a required parameter
   AuthBloc(this.authRepository) : super(const AuthStateLoading()) {
     on<AuthEventCheckLoginStatus>(_checkLoginStatus);
+    on<AuthEventLogOut>(_logout);
     on<AuthEventUserLoggedIn>(
       (event, emit) => emit(AuthStateLoggedIn(user: event.user)),
     );
@@ -36,6 +37,16 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
     event.onStatusChecked?.call(
       isLoggedIn:
           user != null && user is UserAuthModelGoogle && user.isEmailVerified,
+    );
+  }
+
+  Future<void> _logout(
+    AuthEventLogOut event,
+    Emitter<AuthState> emit,
+  ) async {
+    final success = await authRepository.logout();
+    event.onLoggedOut?.call(
+      success: success,
     );
   }
 }

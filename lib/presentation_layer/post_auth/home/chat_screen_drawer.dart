@@ -1,8 +1,11 @@
 import 'package:chatgpt/business_layer/common/auth_bloc.dart';
+import 'package:chatgpt/business_layer/post_auth/chat_screen/chat_screen_bloc.dart';
 import 'package:chatgpt/business_layer/post_auth/conversation/conversation_bloc.dart';
 import 'package:chatgpt/data_layer/models/chat/conversation.dart';
 import 'package:chatgpt/presentation_layer/common/base_streamable_theme_view.dart';
+import 'package:chatgpt/presentation_layer/pre_auth/auth_screen.dart';
 import 'package:chatgpt/service_layer/service_locator.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -117,29 +120,59 @@ class _ChatScreenDrawerState extends State<ChatScreenDrawer> {
                     ),
                   ),
                 ),
-                child: InkWell(
-                  onTap: () {
-                    navigationService.pop();
-                    widget.onSelect(
-                      index == 0 ? null : state.conversations[index - 1],
-                    );
-                  },
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(vertical: 10.h),
-                    child: Text(
-                      index == 0
-                          ? 'Start New Chat'
-                          : state.conversations[index - 1].chatName,
-                      style: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        color: index == 0
-                            ? themeService.state.primaryLinkColor
-                            : themeService.state.primaryTextColor,
-                        fontSize: 17.sp,
+                child: Row(
+                  children: [
+                    Expanded(
+                      child: InkWell(
+                        onTap: () {
+                          navigationService.pop();
+                          widget.onSelect(index == 0
+                              ? null
+                              : state.conversations[index - 1]);
+                        },
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(vertical: 10.h),
+                          child: Text(
+                            index == 0
+                                ? 'Start New Chat'
+                                : state.conversations[index - 1].chatName,
+                            style: TextStyle(
+                              fontWeight: FontWeight.w500,
+                              color: index == 0
+                                  ? themeService.state.primaryLinkColor
+                                  : themeService.state.primaryTextColor,
+                              fontSize: 17.sp,
+                            ),
+                            textAlign: TextAlign.left,
+                          ),
+                        ),
                       ),
-                      textAlign: TextAlign.left,
                     ),
-                  ),
+                    if (index == 0)
+                      IconButton(
+                        onPressed: () => authService.add(
+                          AuthEventLogOut(
+                            ({required success}) {
+                              if (success) {
+                                serviceLocator
+                                    .get<ChatScreenBloc>()
+                                    .add(const ChatScreenEventNewChat());
+                                serviceLocator.get<ConversationBloc>().add(
+                                      const ConversationEventReset(),
+                                    );
+                                navigationService.goToRoute(AuthScreen.route);
+                              } else {
+                                navigationService
+                                  ..pop()
+                                  ..showSnackBar(
+                                      "Something went wrong, can't logout");
+                              }
+                            },
+                          ),
+                        ),
+                        icon: const Icon(Icons.logout),
+                      ),
+                  ],
                 ),
               );
       },

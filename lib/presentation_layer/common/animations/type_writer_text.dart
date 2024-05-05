@@ -82,7 +82,8 @@ class _TypeWriterText extends State<TypeWriterText>
     return AnimatedBuilder(
       animation: _characterCount,
       builder: (BuildContext context, Widget? child) {
-        final text = widget.text.substring(0, _characterCount.value);
+        final text = widget.text
+            .substring(0, min(_characterCount.value, widget.text.length));
         return RichText(
           text: TextSpan(
             children: [

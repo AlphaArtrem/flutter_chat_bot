@@ -6,6 +6,15 @@ abstract class ConversationEvent extends Equatable {
   const ConversationEvent();
 }
 
+///Event to reset data for [ConversationBloc]
+class ConversationEventReset extends ConversationEvent {
+  ///[ConversationEventReset] default constructor
+  const ConversationEventReset();
+
+  @override
+  List<Object?> get props => [];
+}
+
 ///Event to load data for [ConversationBloc]
 class ConversationEventLoad extends ConversationEvent {
   ///[ConversationEventLoad] default constructor

@@ -30,3 +30,15 @@ class AuthEventCheckLoginStatus extends AuthEvent {
   @override
   List<Object?> get props => [];
 }
+
+///Event to log user out
+class AuthEventLogOut extends AuthEvent {
+  ///[AuthEventLogOut] default constructor
+  const AuthEventLogOut(this.onLoggedOut);
+
+  ///Callback to trigger once logged out
+  final void Function({required bool success})? onLoggedOut;
+
+  @override
+  List<Object?> get props => [];
+}

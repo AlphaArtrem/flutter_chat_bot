@@ -15,6 +15,9 @@ class ConversationBloc extends Bloc<ConversationEvent, ConversationState> {
   ConversationBloc(this.chatRepository)
       : super(const ConversationStateInitial()) {
     on<ConversationEventLoad>(_load);
+    on<ConversationEventReset>(
+      (event, emit) => emit(const ConversationStateInitial()),
+    );
     on<ConversationEventUpdate>(
       (event, emit) => emit(
         ConversationStateLoaded(

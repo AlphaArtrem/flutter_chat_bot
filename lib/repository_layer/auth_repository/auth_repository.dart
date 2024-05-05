@@ -65,6 +65,7 @@ class AuthRepository implements IAuthRepository {
     try {
       final timestamp = DateTime.now().millisecondsSinceEpoch;
       final otp = Random(timestamp).nextInt(90000) + 9999;
+      apiService.log.d(appConfig.mailerSendBearerToken);
       final headers = {
         'Content-Type': 'application/json',
         'X-Requested-With': 'XMLHttpRequest',
@@ -92,7 +93,7 @@ class AuthRepository implements IAuthRepository {
       final result = await apiService.postRequest(
         APIConstants.sendMail,
         {
-          'from': {'email': 'info@trial-351ndgwq02qgzqx8.mlsender.net'},
+          'from': {'email': 'info@${appConfig.mailerSendVerifiedDomain}'},
           'to': [
             {'email': recipient},
           ],
@@ -147,5 +148,18 @@ class AuthRepository implements IAuthRepository {
       apiService.log.d(e);
     }
     return null;
+  }
+
+  @override
+  Future<bool> logout() async {
+    try {
+      if (_firebaseAuth.currentUser != null) {
+        await _firebaseAuth.signOut();
+      }
+      return true;
+    } catch (e) {
+      apiService.log.d(e);
+      return false;
+    }
   }
 }

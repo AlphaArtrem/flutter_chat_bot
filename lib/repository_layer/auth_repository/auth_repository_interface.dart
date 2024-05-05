@@ -29,4 +29,9 @@ abstract class IAuthRepository {
   }) async {
     throw UnimplementedError();
   }
+
+  ///Logout user
+  Future<bool> logout() async {
+    throw UnimplementedError();
+  }
 }

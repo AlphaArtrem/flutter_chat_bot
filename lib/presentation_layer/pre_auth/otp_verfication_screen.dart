@@ -95,6 +95,7 @@ class OTPVerificationScreen extends StatelessWidget {
                 : themeState.primaryTextColor,
             fontSize: 16.sp,
           ),
+          textAlign: TextAlign.center,
         ),
         if (state is OTPStateInitial && state.error.isNotEmpty) ...[
           _resendOTPTextButton(),
