@@ -4,7 +4,7 @@ Chat bot made using Flutter, Open AI GPT 3.5 APIs and Firebase
 ## Installation
 1. Clone the repository
 ```
-git clone git@github.com:AlphaArtrem/YASHVARDHAN-AWASTHI-Flutter-AnswersAi.git
+git clone git@github.com:AlphaArtrem/flutter_chat_bot.git
 ```
 3. Create an account on Firebase
 4. Setup [Firebase Core](https://firebase.google.com/docs/flutter/setup)
